@@ -11,6 +11,7 @@ public class DialogueLine
     public string dialogueText;
     
     public Sprite characterSprite;
+    public Sprite currentBackground;
 }
 
 public class DialogueManager : MonoBehaviour
@@ -19,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text dialogueText;
     public Image characterSprite;   
+    public Image currentBackground;
     public Button nextButton;
 
     private int currentLine = 0;
@@ -44,6 +46,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = dialogueLines[currentLine].dialogueText;
         characterSprite.sprite = dialogueLines[currentLine].characterSprite;
         characterSprite.enabled = characterSprite.sprite != null;    
+        currentBackground.sprite = dialogueLines[currentLine].currentBackground;
     }
 
     void NextLine()
